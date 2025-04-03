@@ -17,28 +17,26 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4        
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-          
+
       - name: install latest npm
         run: npm install -g npm@latest
-        
+
       - name: Clean npm cache
         run: npm cache clean --force
-      
-        
+
       - name: Install dependencies
-        run: npm ci --verbose
-        
+        run: npm install --verbose
+
       - name: Print npm debug log
         if: failure()
         run: cat /home/runner/.npm/_logs/*.log || echo "No log found"
 
-        
       - name: Check html-webpack-plugin presence
         run: ls node_modules/html-webpack-plugin || echo "Plugin not found"
-        
+
       - name: Build React App
         run: npm run build
 
