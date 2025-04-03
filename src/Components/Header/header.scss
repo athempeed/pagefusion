@@ -3,6 +3,7 @@
     background: #ffffff;
     border-bottom: 1px solid #e2e8f0;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     z-index: 100;
     position: sticky;
@@ -24,5 +25,30 @@
         display: flex;
         padding: 0 0 0 2.10rem;
         transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
+    }
+
+    .right-container {
+        padding: 1rem;
+        cursor: pointer;
+
+        .cart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .count {
+                border-radius: 47%;
+                background-color: #2359d3;
+                text-align: center;
+                color: white;
+                border: 0;
+                height: 15px;
+                width: 15px;
+                padding: 2px;
+            }
+
+
+        }
     }
 }

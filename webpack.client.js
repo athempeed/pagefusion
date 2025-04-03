@@ -13,13 +13,17 @@ const __dirname = path.dirname(__filename);
 // }, {});
 
 export default {
-    entry: "./src/index.tsx", // Use index.js if not using TypeScript
+    entry: "./src/client-entry.tsx", // Use index.js if not using TypeScript
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js",
-        publicPath: "/",
+        path: path.resolve(__dirname, "dist/client"),
+        filename: "client-entry.js",
+        libraryTarget: 'module',
     },
-    mode: "development",
+    mode: "production",
+    target: 'node',
+    experiments: {
+        outputModule: true,
+    },
     resolve: {
         extensions: [".tsx", ".ts", ".js"], // Allow importing .ts and .tsx files
     },
@@ -39,20 +43,5 @@ export default {
                 use: ["style-loader", "css-loader"],
             },
         ],
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "./public/index.html",
-        }),
-        new Dotenv(),
-    ],
-    devServer: {
-        historyApiFallback: true,
-        static: {
-            directory: path.join(__dirname, 'public'), // or your output dir
-        },
-        compress: true,
-        port: 3000,
-        open: true,
-    },
+    }
 };

@@ -1,0 +1,36 @@
+.draggable-item-container {
+    margin: 1.5rem;
+    overflow-y: auto;
+    border-radius: 7px;
+    box-shadow: 0 2px 21px grey;
+    padding: 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .iframe-wrapper {
+        width: 99%;
+        position: relative;
+        /* height: 400px; */
+        padding-top: 20%;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 5px 1px grey;
+        border-radius: 5px;
+    }
+
+    .scaled-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(0.75);
+        transform-origin: top left;
+        width: 127.33%;
+        height: 133.33%;
+        border: none;
+    }
+
+    .draggable-div {
+        width: 100%;
+        border: 1px solid #020202;
+        border-radius: 12px;
+    }
+}
