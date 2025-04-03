@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-console.log('d', process.env);
-const baseUrl = process.env.REACT_APP_CLOUDFLARE_PAGE_URL;
+const baseUrl = "https://cms-themes.pages.dev";
 
 export const apiSlice = createApi({
     reducerPath: "api",

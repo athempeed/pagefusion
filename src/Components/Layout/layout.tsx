@@ -25,7 +25,7 @@ const Layout = () => {
         return <div>Error loading content</div>;
 
     }
-    const fixedHtml = fixRelativeAssets(htmlContent, baseUrl);
+    const fixedHtml = fixRelativeAssets(htmlContent, "https://cms-themes.pages.dev");
     return (
         <iframe
             title="Design Preview"
