@@ -28,7 +28,7 @@ jobs:
         run: npm cache clean --force
 
       - name: Install dependencies
-        run: npm install --verbose
+        run: npm install
 
       - name: Print npm debug log
         if: failure()
