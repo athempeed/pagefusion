@@ -22,11 +22,7 @@ const Sidebar: React.FC = () => {
     const navigate = useNavigate();
     const isCollapsed = useAppSelector(sidebarState.selectSidebar);  // ✅ Correct selector usage
     // const activeItem = useAppSelector(sidebarState.activeItem);  // ✅ Correct selector usage
-    const location = useLocation();
-
-    //let activeItem = state.payload.sidebar.activeNavItem;
-
-    const dispatch = useAppDispatch();
+    const location = useLocation();    
 
     const setActiveNav = (item: string, path: string) => {
         if (path !== '') {

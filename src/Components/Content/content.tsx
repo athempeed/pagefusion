@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Carousels from '../Carousels/carousels';
+import Carousels from '../carousels/carousels';
 import './content.scss';
 import Layout from "../Layout/layout";
 import Dashboard from "../Dashboard/dashboard";
