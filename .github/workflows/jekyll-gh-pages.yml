@@ -22,8 +22,11 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
-
+        run: npm ci
+      
+      - name: Check html-webpack-plugin presence
+        run: ls node_modules/html-webpack-plugin || echo "Plugin not found"
+        
       - name: Build React App
         run: npm run build
 
