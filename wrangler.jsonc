@@ -13,6 +13,9 @@
 	"compatibility_flags": [
 		"nodejs_compat"
 	],
+	"site": {
+		"bucket": "./dist/client"
+	},
 	"compatibility_date": "2025-03-03",
 	"observability": {
 		"enabled": true

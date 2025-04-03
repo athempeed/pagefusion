@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import { selectedTemplatesState, reorderTemplates } from "../../store/slices/selectedTemplateSlice";
 import './checkout.scss';
