@@ -1,7 +1,6 @@
 import React from "react";
 import { useGetHtmlContentQuery } from "../../store/slices/cloudFlarePageSlice";
-import { useAppSelector } from "../../store/hooks";
-import { sidebarState } from "../../store/slices/sidebar";
+
 
 import "./layout.scss";
 
@@ -20,7 +19,12 @@ const Layout = () => {
         skip: !templateName, // Only fetch when path is available
     });
     if (isLoading) return <div>Loading...</div>;
-    if (error || !htmlContent) return <div>Error loading content</div>;
+    if (error || !htmlContent) {
+        console.log('htmlConten', htmlContent);
+        console.log(error);
+        return <div>Error loading content</div>;
+
+    }
     const fixedHtml = fixRelativeAssets(htmlContent, baseUrl);
     return (
         <iframe
