@@ -2,6 +2,7 @@ import path from "path";
 import Dotenv from 'dotenv-webpack';
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 
 // Convert ES module `import.meta.url` to __dirname equivalent
 const __filename = fileURLToPath(import.meta.url);
@@ -17,7 +18,7 @@ export default {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
-        publicPath: "/",
+        publicPath: "/pagefusion",
     },
     mode: "development",
     resolve: {
@@ -45,6 +46,7 @@ export default {
             template: "./public/index.html",
         }),
         new Dotenv(),
+        new CaseSensitivePathsPlugin()
     ],
     devServer: {
         historyApiFallback: true,
