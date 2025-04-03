@@ -44,6 +44,7 @@ export default {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./public/index.html",
+            hash: true,
             publicPath: '/pagefusion/', // 👈 important for asset URLs in HTML
         }),
         new Dotenv(),
